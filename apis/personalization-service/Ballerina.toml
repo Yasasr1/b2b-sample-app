@@ -1,0 +1,7 @@
+[package]
+org = "WSO2"
+name = "personalization_service"
+version = "1.0.0"
+
+[build-options]
+observabilityIncluded = true

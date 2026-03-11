@@ -1,0 +1,13 @@
+schemaVersion: 1.2
+
+endpoints:
+  - name: personalization_service
+    displayName: Personalization Service
+    service:
+      basePath: /
+      port: 9093
+    type: REST
+    networkVisibilities: 
+      - Public
+      - Organization
+    schemaFilePath: personalization_service_openapi.yaml

@@ -1,0 +1,79 @@
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "rootDir": ".",
+    "sourceMap": true,
+    "declaration": false,
+    "moduleResolution": "node",
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "importHelpers": true,
+    "target": "es2015",
+    "module": "esnext",
+    "resolveJsonModule": true,
+    "lib": [
+      "es2017",
+      "dom"
+    ],
+    "skipLibCheck": true,
+    "skipDefaultLibCheck": true,
+    "baseUrl": ".",
+    "paths": {
+      "@teamspace-app/data-access-common-api-util": [
+        "components/shared/data-access/data-access-common-api-util/main.ts"
+      ],
+      "@teamspace-app/data-access-common-models-util": [
+        "components/shared/data-access/data-access-common-models-util/main.ts"
+      ],
+      "@teamspace-app/data-access-controller": [
+        "components/shared/data-access/data-access-controller/main.ts"
+      ],
+      "@teamspace-app/ui-assets": [
+        "ui/ui-assets"
+      ],
+      "@teamspace-app/ui-assets/*": [
+        "ui/ui-assets/*"
+      ],
+      "@teamspace-app/ui-components": [
+        "ui/ui-components/main.ts"
+      ],
+      "@teamspace-app/util-application-config-util": [
+        "util/util-application-config-util/main.ts"
+      ],
+      "@teamspace-app/util-authorization-config-util": [
+        "util/util-authorization-config-util/main.ts"
+      ],
+      "@teamspace-app/shared/data-access/data-access-common-api-util": [
+        "components/shared/data-access/data-access-common-api-util/main.ts"
+      ],
+      "@teamspace-app/shared/data-access/data-access-common-models-util": [
+        "components/shared/data-access/data-access-common-models-util/main.ts"
+      ],
+      "@teamspace-app/shared/ui/ui-assets": [
+        "components/shared/ui/ui-assets"
+      ],
+      "@teamspace-app/shared/ui/ui-basic-components": [
+        "components/shared/ui/ui-basic-components/main.ts"
+      ],
+      "@teamspace-app/shared/ui/ui-components": [
+        "components/shared/ui/ui-components/main.ts"
+      ],
+      "@teamspace-app/shared/util/util-application-config-util": [
+        "components/shared/util/util-application-config-util/main.ts"
+      ],
+      "@teamspace-app/shared/util/util-authorization-config-util": [
+        "components/shared/util/util-authorization-config-util/main.ts"
+      ],
+      "@teamspace-app/shared/util/util-common": [
+        "components/shared/util/util-common/main.ts"
+      ],
+      "@teamspace-app/shared/util/util-front-end-util": [
+        "components/shared/util/util-front-end-util/main.ts"
+      ]
+    }
+  },
+  "exclude": [
+    "node_modules",
+    "tmp"
+  ]
+}

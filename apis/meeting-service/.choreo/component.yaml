@@ -1,0 +1,13 @@
+schemaVersion: 1.2
+
+endpoints:
+  - name: meeting-service
+    displayName: Meeting Service
+    service:
+      basePath: /
+      port: 9091
+    type: REST
+    networkVisibilities: 
+      - Public
+      - Organization
+    schemaFilePath: service_openapi.yaml

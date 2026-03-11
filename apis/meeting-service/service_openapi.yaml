@@ -1,0 +1,171 @@
+openapi: 3.0.3
+info:
+  title: Meeting Service
+  version: 1.0.0
+servers:
+  - url: "{server}:{port}/"
+    variables:
+      server:
+        default: http://localhost
+      port:
+        default: "9091"
+paths:
+  /meetings:
+    get:
+      summary: Get all meetings
+      operationId: getMeetings
+      responses:
+        "200":
+          description: Ok
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Meeting'
+        "500":
+          description: Internal server error
+          content:
+            text/plain:
+              schema:
+                type: string
+    post:
+      summary: Create a new meeting
+      operationId: postMeetings
+      requestBody:
+        description: basic meeting details
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/MeetingItem'
+      responses:
+        "201":
+          description: Created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Meeting'
+        "500":
+          description: Internal server error
+          content:
+            text/plain:
+              schema:
+                type: string
+  /meetings/{meetingId}:
+    get:
+      summary: Get a meeting by ID
+      operationId: getMeetingsMeetingId
+      parameters:
+        - name: meetingId
+          in: path
+          description: ID of the meeting
+          required: true
+          schema:
+            type: string
+      responses:
+        "200":
+          description: Ok
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Meeting'
+        "404":
+          description: NotFound
+        "500":
+          description: Internal server error
+          content:
+            text/plain:
+              schema:
+                type: string
+    put:
+      summary: Update a meeting
+      operationId: putMeetingsMeetingId
+      parameters:
+        - name: meetingId
+          in: path
+          description: ID of the meeting
+          required: true
+          schema:
+            type: string
+      requestBody:
+        description: updated meeting details
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/MeetingItem'
+      responses:
+        "200":
+          description: Ok
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Meeting'
+        "404":
+          description: NotFound
+        "500":
+          description: Internal server error
+          content:
+            text/plain:
+              schema:
+                type: string
+    delete:
+      summary: Delete a meeting
+      operationId: deleteMeetingsMeetingId
+      parameters:
+        - name: meetingId
+          in: path
+          description: ID of the meeting
+          required: true
+          schema:
+            type: string
+      responses:
+        "204":
+          description: NoContent
+        "404":
+          description: NotFound
+        "500":
+          description: Internal server error
+          content:
+            text/plain:
+              schema:
+                type: string
+components:
+  schemas:
+    Meeting:
+      required:
+        - id
+        - title
+        - description
+        - organization
+        - startTime
+        - endTime
+      type: object
+      properties:
+        id:
+          type: string
+        title:
+          type: string
+        description:
+          type: string
+        organization:
+          type: string
+        startTime:
+          type: string
+        endTime:
+          type: string
+    MeetingItem:
+      required:
+        - title
+        - description
+        - startTime
+        - endTime
+      type: object
+      properties:
+        title:
+          type: string
+        description:
+          type: string
+        startTime:
+          type: string
+        endTime:
+          type: string

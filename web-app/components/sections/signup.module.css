@@ -1,0 +1,212 @@
+.signUpModalHeader {
+    margin-top: 30px;
+    text-align: center;
+    padding-right: 0;
+}
+
+.signUpModalHeaderDescription {
+    font-size: 16px;
+}
+
+.signUpModalBody {
+    padding: 40px;
+}
+
+.signUpErrors {
+    margin-bottom: 30px;
+}
+
+.subscriptionTable {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+.subscriptionTable th,
+.subscriptionTable td {
+    border: none;
+    padding: 8px;
+    text-align: center;
+    width: 140px;
+}
+.clickable {
+    cursor: pointer;
+}
+.subscriptionTable th {
+    background-color: #f7f7f7;
+}
+.selected {
+    border: 2px solid #3498db;
+    background-color: #eef7ff;
+}
+.addonContainer {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 20px;
+}
+.addonOption {
+    border: 1px solid #ddd;
+    padding: 8px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+.addonSelected {
+    border: 2px solid #3498db;
+    background-color: #eef7ff;
+}
+.error {
+    color: red;
+    padding: 4px 0;
+}
+
+.buttonToolbarContainer {
+    margin-top: 20px;
+}
+
+.addonOption span {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+.addonDescription {
+    font-size: 12px;
+    margin-top: 4px;
+}
+.addonIcon {
+    font-size: 20px;
+}
+
+.addonPrice {
+    font-size: 12px;
+    margin-top: 2px;
+}
+
+.totalPrice {
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+    margin: 10px 0;
+}
+
+.formFields {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.formFields :global(.rs-form-group) {
+    width: 100%;
+}
+
+.priceMain {
+  font-size: 1.3em;
+  font-weight: bold;
+  color: #222;
+}
+
+.priceSub {
+  font-size: 0.9em;
+  color: #666;
+}
+
+/* Pricing Section */
+.pricing {
+  padding-bottom: 40px;
+}
+
+.pricingGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.pricingSectionDescription {
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+.pricingCard {
+  background: white;
+  border: 2px solid #e2e8f0;
+  border-radius: 16px;
+  padding: 32px;
+  position: relative;
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+
+.pricingCard.selected {
+  border-color: var(--rs-primary-500);
+  box-shadow: 0 10px 25px -5px rgba(59, 130, 246, 0.1);
+  background: var(--rs-primary-100);
+}
+
+.pricingCard:hover {
+  border-color: var(--rs-primary-500);
+  box-shadow: 0 10px 25px -5px rgba(59, 130, 246, 0.1);
+}
+
+.popularBadge {
+  position: absolute;
+  top: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--rs-primary-500);
+  color: white;
+  padding: 6px 16px;
+  border-radius: 24px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.planHeader {
+  text-align: center;
+  margin-bottom: 32px;
+}
+
+.planName {
+  font-size: 20px;
+  font-weight: 600;
+  color: #1e293b;
+  margin-bottom: 8px;
+}
+
+.planDescription {
+  color: #64748b;
+  margin-bottom: 16px;
+}
+
+.planPrice {
+  margin-bottom: 16px;
+}
+
+.price {
+  font-size: 36px;
+  font-weight: 700;
+  color: #1e293b;
+}
+
+.period {
+  color: #64748b;
+}
+
+.planFeatures {
+  list-style: none;
+  margin-bottom: 32px;
+}
+
+.planFeature {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 8px 0;
+  color: #374151;
+}
+
+.planFeature .checkmark {
+  color: #10b981;
+  font-weight: 600;
+}
