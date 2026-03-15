@@ -26,7 +26,7 @@ export enum InviteConst {
     PWD = "pwd-method-pwd"
 }
 
-function inviteAddUserBody(firstName: string, familyName: string, email: string): SendUser {
+function inviteAddUserBody(firstName: string, familyName: string, username: string, email: string): SendUser {
     return {
         "emails": [
             {
@@ -41,11 +41,11 @@ function inviteAddUserBody(firstName: string, familyName: string, email: string)
         "urn:ietf:params:scim:schemas:extension:enterprise:2.0:User": {
             "askPassword": true
         },
-        "userName": setUsername(email)
+        "userName": setUsername(username)
     };
 }
 
-function pwdAddUserBody(firstName: string, familyName: string, email: string, password: string)
+function pwdAddUserBody(firstName: string, familyName: string, username: string, email: string, password: string)
     : SendUser {
     return {
         "emails": [
@@ -60,7 +60,7 @@ function pwdAddUserBody(firstName: string, familyName: string, email: string, pa
         },
         "password": password,
         "schemas": [],
-        "userName": setUsername(email)
+        "userName": setUsername(username)
     };
 }
 
@@ -68,14 +68,15 @@ function getAddUserBody(
     inviteConst: InviteConst,
     firstName: string,
     familyName: string,
+    username: string,
     email: string,
     password: string): SendUser | undefined {
     switch (inviteConst) {
         case InviteConst.INVITE:
-            return inviteAddUserBody(firstName, familyName, email);
+            return inviteAddUserBody(firstName, familyName, username, email);
 
         case InviteConst.PWD:
-            return pwdAddUserBody(firstName, familyName, email, password);
+            return pwdAddUserBody(firstName, familyName, username, email, password);
 
         default:
 
@@ -89,6 +90,7 @@ function getAddUserBody(
  * @param inviteConst - `InviteConst.INVITE` or `InviteConst.PWD`
  * @param firstName - first name
  * @param familyName - last name
+ * @param username - username
  * @param email - email
  * @param password - password
  * 
@@ -99,11 +101,12 @@ export async function controllerDecodeAddUser(
     inviteConst: InviteConst,
     firstName: string,
     familyName: string,
+    username: string,
     email: string,
     password: string): Promise<User | boolean | any> {
 
     const addUserEncode: SendUser =
-        (getAddUserBody(inviteConst, firstName, familyName, email, password) as SendUser);
+        (getAddUserBody(inviteConst, firstName, familyName, username, email, password) as SendUser);
 
     const res = (
         await commonControllerDecode(() => controllerCallAddUser(session, addUserEncode), false) as User | boolean);

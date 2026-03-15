@@ -143,7 +143,7 @@ export default function AddUserComponent(props: AddUserComponentProps) {
 
     const onSubmit = async (values: Record<string, string>, form): Promise<void> => {
         setLoadingDisplay(LOADING_DISPLAY_BLOCK);
-        controllerDecodeAddUser(session, inviteSelect, values.firstName, values.familyName, values.email,
+        controllerDecodeAddUser(session, inviteSelect, values.firstName, values.familyName, values.username, values.email,
             values.password)
             .then((response1) => {
                 onUserSubmit(response1, form);
